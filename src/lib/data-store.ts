@@ -1238,7 +1238,7 @@ export async function saveBannerSettings(settings: BannerSettings): Promise<void
 export async function getWorkflowTypes(): Promise<WorkflowType[]> {
   const { data, error } = await supabase
     .from('dcq_workflow_types')
-    .select('*, dcq.workflow_categories!workflow_types_category_id_fkey(code, name)')
+    .select('*')
     .eq('is_active', true)
     .order('created_at');
 
